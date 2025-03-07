@@ -1,0 +1,12 @@
+[project]
+name = "image-server"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "loguru>=0.7.3",
+    "multipart>=1.2.1",
+    "pillow>=11.1.0",
+    "requests-toolbelt>=1.0.0",
+]
