@@ -93,7 +93,7 @@ function uploadFile() {
       downloadButton.hidden = false;
       downloadButton.onclick = () => {
         const link = document.createElement("a");
-        link.href = file_location + filename;
+        link.href = `/images/${filename}`;
         link.download = filename;
         document.body.appendChild(link);
         link.click();
