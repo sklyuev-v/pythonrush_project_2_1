@@ -1,0 +1,10 @@
+VALID_FILE_FORMATS = ('JPEG', 'GIF', 'PNG')
+SERVER_ADDRESS = ('0.0.0.0', 8000)
+LOG_PATH = 'logs/'
+LOG_FILENAME_APP = 'app.log'
+LOG_FILENAME_ROUTER = 'router.log'
+LOG_MESSAGE_FORMAT = "[{time: YYYY-MM-DD HH:mm:ss}] | {level} | {message}"
+STATIC_PATH = './static'
+IMAGES_PATH = 'images/'
+SERVER_VERSION = 'Image Hosting Server/0.2'
+ERROR_FILE_404 = '404.html'
