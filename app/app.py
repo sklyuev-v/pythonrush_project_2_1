@@ -6,6 +6,8 @@ from loguru import logger
 from ImageHostingHandler import ImageHostingHandler
 from Router import Router
 from routes import register_routes
+from DBManager import DBManager
+from environs import Env
 
 from settings import SERVER_ADDRESS
 from settings import LOG_PATH, LOG_FILENAME_APP
@@ -16,8 +18,19 @@ def run_server(server_class=HTTPServer, handler_class=ImageHostingHandler):
     """This function runs HTTP Server.
     You can stop the server by press Ctrl+C
     """
+    env = Env()
+    env.read_env()
+
     logger.add(os.path.join(LOG_PATH, LOG_FILENAME_APP),
                format=LOG_MESSAGE_FORMAT)
+
+    db = DBManager(env('POSTGRES_DB'),
+                   env('POSTGRES_USER'),
+                   env('POSTGRES_PASSWORD'),
+                   env('POSTGRES_HOST'),
+                   env('POSTGRES_PORT'))
+
+    db.init_tables()
 
     router = Router()
     register_routes(router, handler_class)
