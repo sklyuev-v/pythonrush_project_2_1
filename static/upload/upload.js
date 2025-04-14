@@ -34,6 +34,10 @@ function updateImageDisplay() {
       filenamePEl.textContent = `Имя: ${curFile.name}`;
       filesizePEl.textContent = `Размер: ${returnFileSize(curFile.size)}`;
 
+      if (curFile.size > 5 * 1024 * 1024) {
+        window.location.href = "../413.html";
+      }
+
       let imageElement = document.createElement("img");
       imageElement.id = "previewImage";
       imageElement.src = window.URL.createObjectURL(curFile);
