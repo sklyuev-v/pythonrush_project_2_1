@@ -1,7 +1,8 @@
 # My ignore
 task-1.md
 task-2.md
-
+/images/
+/logs/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
