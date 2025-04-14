@@ -14,6 +14,31 @@
       <div class="px-4 py-5 my-5 text-center bg-body bg-opacity-50 rounded-5">
         <div id="images_placeholder" class="row align-items-center"></div>
       </div>
+      <div class="modal" id="modal">
+        <span class="close" id="close">&times;</span>
+        <img class="modal-content" id="modal-img" src="">
+    </div>
+      <div class="container">
+        <nav>
+          <ul class="pagination justify-content-center">
+              <li class="page-item">
+                  <button class="page-link" id="prevPage" disabled aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                  </button>
+              </li>
+              <li class="page-item">
+                  <button class="page-link" disabled id="currentPage" aria-label="Next">
+                      1
+                  </button>
+              </li>
+              <li class="page-item">
+                  <button class="page-link" id="nextPage" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                  </button>
+              </li>
+          </ul>
+      </nav>
+      </div>
       <div class="container">
         <a class="btn btn-primary mb-1 px-5 btn-lg" href="/">На главную</a>
       </div>
