@@ -22,6 +22,14 @@ class AdvancedHTTPRequestHandler(BaseHTTPRequestHandler):
                   code: int = 200,
                   headers: dict = None,
                   file_path: str = STATIC_PATH) -> NoReturn:
+        """Send html page
+
+        Args:
+            filename (str): html page name
+            code (int, optional): response code. Default 200.
+            headers (dict, optional): Headers of response.
+            file_path (str, optional): Path to dir with html files
+        """
 
         self.send_response(code)
         self.send_header('Content-type', 'text/html')
@@ -35,6 +43,13 @@ class AdvancedHTTPRequestHandler(BaseHTTPRequestHandler):
 
     def send_json(self, respone: dict, code: int = 200,
                   headers: dict = None) -> NoReturn:
+        """Send json
+
+        Args:
+            respone (dict): send data
+            code (int, optional): Response code. Defaults to 200.
+            headers (dict, optional): Headers of response. Defaults to None.
+        """
 
         self.send_response(code)
         self.send_header('Content-type', 'application/json')
@@ -55,6 +70,11 @@ class AdvancedHTTPRequestHandler(BaseHTTPRequestHandler):
 
     def do_request(self,
                    method: Literal["GET", "POST", "DELETE"],) -> NoReturn:
+        """Processes requests with GET, POST, DELETE methods
+
+        Args:
+            method (Literal[GET, POST, DELETE]): Request method
+        """
         logger.info(f'{method} {self.path}')
         handler, kwargs = self.router.resolve(method, self.path)
         if handler:
