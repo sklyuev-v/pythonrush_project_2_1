@@ -22,10 +22,6 @@ function setImages(images) {
     imageDivEl.style.height = "170px";
     mainDivEl.appendChild(imageDivEl);
 
-    //const aElement = document.createElement("a");
-    //aElement.href = `/images/${fullFilename}`;
-    //imageDivEl.appendChild(aElement);
-
     const imageElement = document.createElement("img");
     imageElement.src = `/images/${fullFilename}`;
     imageElement.alt = image;
@@ -37,7 +33,6 @@ function setImages(images) {
       modal.style.display = "block";
     });
     imageDivEl.appendChild(imageElement);
-    //aElement.appendChild(imageElement);
 
     const buttonDivEl = document.createElement("div");
     buttonDivEl.className = "col m-2 rounded";
